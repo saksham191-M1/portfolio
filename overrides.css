@@ -1,0 +1,9 @@
+.project-body .project-strength {
+  color: var(--accent);
+  font: 500 11px/1.4 "DM Mono", monospace;
+  margin: 0;
+}
+
+.project-body p:has(+ .project-strength) {
+  margin-bottom: 12px;
+}
