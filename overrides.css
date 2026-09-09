@@ -7,34 +7,3 @@
 .project-body p:has(+ .project-strength) {
   margin-bottom: 12px;
 }
-
-.header-actions { display: flex; justify-content: flex-end; }
-.theme-toggle { background: transparent; border: 0; border-left: 1px solid var(--line); color: var(--ink); cursor: pointer; font: 500 11px "DM Mono", monospace; padding: 0 16px; }
-
-body.theme-dark {
-  --paper: #11110f;
-  --ink: #f1f0e9;
-  --muted: #9b9b92;
-  --line: #4c4c46;
-  --accent: #ff4a1f;
-  background-color: #11110f;
-  background-image: radial-gradient(#ffffff0d .65px, transparent .65px);
-}
-
-.theme-dark .site-header { background: #11110fe8; }
-.theme-dark .hero-copy p, .theme-dark .project-body p, .theme-dark .about-grid p { color: #d3d2ca; }
-.theme-dark .eyebrow, .theme-dark .project-meta, .theme-dark .ticker, .theme-dark .diagram-note, .theme-dark footer { color: #a8a8a0; }
-.theme-dark .browser, .theme-dark .community-core, .theme-dark .skill-ui { background: #1a1a17; }
-.theme-dark .browser { border-color: #d9d8d0; box-shadow: 7px 7px 0 var(--accent); }
-.theme-dark .browser-bar, .theme-dark .ui-title, .theme-dark .ui-card { color: #c7c6be; }
-.theme-dark .problem p { color: #c7c6be; }
-.theme-dark .community-visual { background: linear-gradient(135deg, #1a1a17, #23231f); }
-.theme-dark .project-wide .wide-layout { background: linear-gradient(90deg, #11110f 50%, #191916); }
-.theme-dark .ui-line { background: #54544e; }
-.theme-dark .ui-line.active { background: #e8e7df; }
-.theme-dark .theme-toggle:hover { color: var(--accent); }
-
-@media (max-width: 800px) {
-  .header-actions { height: 100%; }
-  .theme-toggle { padding: 0 11px; }
-}
