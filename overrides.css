@@ -8,6 +8,12 @@
   margin-bottom: 12px;
 }
 
+.leet-visual .problem p {
+  max-width: 440px;
+  margin-bottom: 18px;
+  line-height: 1.4;
+}
+
 /* Coding Profiles & Problem Solving Section */
 .coding-section {
   padding: 86px 26px;
