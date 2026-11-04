@@ -1,0 +1,535 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Scoupe — An AI-Native Guardrail System for Vibe Coders by Saksham Bisht." />
+    <title>Scoupe Case Study — Saksham Bisht</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="overrides.css" />
+  </head>
+  <body>
+    <div class="page-frame" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+    
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Saksham Bisht home"><span class="brand-mark">SB</span><span>SAKSHAM BISHT</span></a>
+      <nav aria-label="Primary navigation">
+        <a href="index.html#work">← BACK TO PORTFOLIO</a>
+        <a href="#summary">SUMMARY</a>
+        <a href="#problem">PROBLEM</a>
+        <a href="#innovations">INNOVATIONS</a>
+        <a href="#architecture">ARCHITECTURE</a>
+        <a href="#economics">ECONOMICS</a>
+      </nav>
+      <a class="header-link" href="https://github.com/saksham191-M1" target="_blank" rel="noreferrer">GITHUB <span>↗</span></a>
+    </header>
+
+    <main class="case-study-page">
+      <!-- Article Header -->
+      <section class="cs-hero">
+        <div class="eyebrow"><span class="signal"></span> ARCHITECTURE CASE STUDY · IN ACTIVE DEVELOPMENT · 2026</div>
+        <div class="cs-header-grid">
+          <div>
+            <span class="cs-category">[ SYSTEMS DESIGN &amp; AI AGENT GUARDRAILS ]</span>
+            <h1 class="cs-title">SCOUPE<br><em>AI-NATIVE GUARDRAILS</em><br>FOR VIBE CODERS.</h1>
+          </div>
+          <div class="cs-meta-box">
+            <div class="cs-meta-item">
+              <span class="meta-label">ROLE &amp; AUTHOR</span>
+              <span class="meta-val">Saksham Bisht (Architecture &amp; Design)</span>
+            </div>
+            <div class="cs-meta-item">
+              <span class="meta-label">STATUS</span>
+              <span class="meta-val"><strong class="status-pill">IN DEVELOPMENT</strong> Architecture Verified</span>
+            </div>
+            <div class="cs-meta-item">
+              <span class="meta-label">TARGET RUNTIME</span>
+              <span class="meta-val">Cursor · Claude Desktop · Windsurf · VS Code</span>
+            </div>
+            <div class="cs-meta-item">
+              <span class="meta-label">CORE TOOLCHAIN</span>
+              <span class="meta-val">TypeScript · Tree-sitter · Graphiti MCP · LoRA</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cs-quote-banner">
+          <blockquote>
+            “Most AI coding tools help you write code faster. Scoupe makes sure that code is actually correct, scoped, and safe.”
+          </blockquote>
+        </div>
+      </section>
+
+      <!-- Section 1: Project Summary -->
+      <section id="summary" class="cs-section">
+        <div class="section-head">
+          <span class="index">[01]</span>
+          <h2>PROJECT SUMMARY</h2>
+          <span class="mono">LIVE EXECUTION LAYER</span>
+        </div>
+        <div class="cs-body-grid">
+          <div class="cs-col-main">
+            <p class="lead-text">
+              <strong>Scoupe</strong> is a developer tool that wraps around any AI coding assistant (GPT-4, Claude, Gemini, Codex) and enforces professional software engineering standards—automatically.
+            </p>
+            <p>
+              It eliminates the most frequent and costly failure modes of AI-assisted engineering: scope creep, broken partial rollbacks, silent file corruption, and arbitrary violations of team conventions.
+            </p>
+            <p>
+              Scoupe is <strong>not a linter</strong> and <strong>not a passive code review tool</strong>. It is a <strong>live execution layer</strong> sitting directly between developer intent and LLM tool execution—observing, controlling, and rolling back file writes in real time.
+            </p>
+          </div>
+          <div class="cs-col-aside">
+            <div class="highlight-card">
+              <span class="card-label">THE CORE DISTINCTION</span>
+              <h4>EXECUTION LAYER VS. PROMPT HOPE</h4>
+              <p>Existing solutions rely on system prompts or markdown files like <code>CLAUDE.md</code> that LLMs frequently ignore under long contexts. Scoupe enforces boundaries cryptographically at the execution boundary.</p>
+              <div class="mini-tag-list">
+                <span>OUTPUT FILTERING</span>
+                <span>STATE ISOLATION</span>
+                <span>ATOMIC ROLLBACK</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 2: Problem Being Solved -->
+      <section id="problem" class="cs-section">
+        <div class="section-head">
+          <span class="index">[02]</span>
+          <h2>PROBLEM BEING SOLVED</h2>
+          <span class="mono">THE VIBE CODING TAX</span>
+        </div>
+        <div class="cs-content-block">
+          <p>
+            The rise of "vibe coding"—where developers leverage LLMs to write the majority of their code—has introduced a brand-new taxonomy of failure modes that traditional static analyzers and compilers fail to prevent:
+          </p>
+
+          <div class="table-wrap">
+            <table class="cs-table">
+              <thead>
+                <tr>
+                  <th>FAILURE MODE</th>
+                  <th>WHAT HAPPENS IN PRACTICE</th>
+                  <th>TRADITIONAL TOOLS</th>
+                  <th>SCOUPE ENFORCEMENT</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Scope Creep</strong></td>
+                  <td>AI touches unrelated files, rewrites imports, or breaks surrounding architecture it was never asked to touch.</td>
+                  <td><span class="badge-fail">✕ Not Caught</span></td>
+                  <td><span class="badge-pass">✓ Scope Lock Contract</span> Blocks unauthorized file access prior to write.</td>
+                </tr>
+                <tr>
+                  <td><strong>Partial Writes</strong></td>
+                  <td>Developer cancels mid-stream; half-written methods or broken syntax are left stranded in repository files.</td>
+                  <td><span class="badge-fail">✕ Not Caught</span></td>
+                  <td><span class="badge-pass">✓ Hot Task Queue</span> Instant zero-friction rollback to pre-task snapshot.</td>
+                </tr>
+                <tr>
+                  <td><strong>Context Explosion</strong></td>
+                  <td>LLM greedily reads 15+ files to locate one utility function, draining tokens and polluting context window.</td>
+                  <td><span class="badge-fail">✕ Not Caught</span></td>
+                  <td><span class="badge-pass">✓ Graphiti MCP</span> Knowledge-graph queries reduce tokens by 5x–70x.</td>
+                </tr>
+                <tr>
+                  <td><strong>Silent Errors</strong></td>
+                  <td>AI introduces logic bugs, deprecated arguments, or hallucinations that pass linting until runtime crashes.</td>
+                  <td><span class="badge-warn">⚠ Post-Commit Only</span></td>
+                  <td><span class="badge-pass">✓ 3-Layer Scanner</span> Regex stream → Tree-sitter AST → Semantic AI.</td>
+                </tr>
+                <tr>
+                  <td><strong>No Standards</strong></td>
+                  <td>Syntactically working code that completely disregards project patterns, error handling, or typing conventions.</td>
+                  <td><span class="badge-fail">✕ Not Caught</span></td>
+                  <td><span class="badge-pass">✓ Standards Engine</span> Curated RAG ruleset + LoRA model enforcement.</td>
+                </tr>
+                <tr>
+                  <td><strong>No Audit Trail</strong></td>
+                  <td>No deterministic record of which AI prompted which changes, why lines were altered, or diff justifications.</td>
+                  <td><span class="badge-fail">✕ Not Caught</span></td>
+                  <td><span class="badge-pass">✓ 6-State Manifest</span> Real-time WebSocket/SSE state logging.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 3: Key Innovations -->
+      <section id="innovations" class="cs-section">
+        <div class="section-head">
+          <span class="index">[03]</span>
+          <h2>KEY INNOVATIONS</h2>
+          <span class="mono">ENGINEERING ARCHITECTURE</span>
+        </div>
+
+        <div class="innovation-cards">
+          <!-- Innovation 1 -->
+          <article class="inno-card">
+            <div class="inno-meta"><span>INNOVATION 01</span><span>SYSTEMS GATEWAY</span></div>
+            <div class="inno-body">
+              <h3>1. 🔒 Scope Lock Engine</h3>
+              <p>Instead of hoping the LLM stays in bounds, Scoupe executes an automated <strong>5-question pre-task interview</strong> with the developer. The answers generate a deterministic <strong>Scope Contract</strong> in JSON format:</p>
+              <ul>
+                <li><strong>Whitelisted File Paths:</strong> Exactly which paths the AI is authorized to create or modify.</li>
+                <li><strong>Boundary Definition:</strong> Strict negative criteria ("What this task is NOT allowed to change").</li>
+                <li><strong>Acceptance Criteria:</strong> Quantifiable verification checklist for task completion.</li>
+              </ul>
+              <p>This contract is dual-injected: fed into the LLM system prompt and applied as an <strong>output-level filter</strong> before file write operations touch disk. The model physically cannot write outside the boundary.</p>
+              <div class="inno-callout">
+                <strong>Honest Engineering:</strong> This is designed as clean output-level filtering rather than unviable OS sandbox blocking—delivering robust cross-platform safety.
+              </div>
+            </div>
+          </article>
+
+          <!-- Innovation 2 -->
+          <article class="inno-card">
+            <div class="inno-meta"><span>INNOVATION 02</span><span>ORCHESTRATION</span></div>
+            <div class="inno-body">
+              <h3>2. 🔥 Hot Task Queue with Auto-Rollback</h3>
+              <p>Scoupe manages an orchestrator-side queue where the LLM only ever receives a clean, isolated context for one discrete sub-task at a time.</p>
+              <div class="flow-diagram-box">
+                <div class="flow-step"><span>01</span> Task Starts → File Snapshot Cached</div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step alert"><span>02</span> User Stops / Error → Instant Rollback</div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step"><span>03</span> Task Completed → Summarized for Next Context</div>
+              </div>
+              <p><strong>Same-File Conflict Detection:</strong> When two queued tasks target overlapping files, Scoupe warns the engineer beforehand rather than allowing destructive clobbers, fostering intentional codebase architecture.</p>
+            </div>
+          </article>
+
+          <!-- Innovation 3 -->
+          <article class="inno-card">
+            <div class="inno-meta"><span>INNOVATION 03</span><span>PIPELINE VALIDATION</span></div>
+            <div class="inno-body">
+              <h3>3. 🧠 3-Layer Error Scanner</h3>
+              <p>Every generated output passes through three tiers of verification ordered strictly by computational cost:</p>
+              <div class="layers-grid">
+                <div class="layer-item">
+                  <div class="layer-num">LAYER 1</div>
+                  <h4>Regex Scanner</h4>
+                  <p>Runs on every streamed token in real time; catches syntax leakages, API keys, and forbidden pattern tokens with near-zero latency.</p>
+                </div>
+                <div class="layer-item">
+                  <div class="layer-num">LAYER 2</div>
+                  <h4>AST Parser (Tree-sitter)</h4>
+                  <p>Executes once per completed file write. Eliminates false positives by parsing complete syntax trees across 150+ languages.</p>
+                </div>
+                <div class="layer-item">
+                  <div class="layer-num">LAYER 3</div>
+                  <h4>Semantic AI Evaluator</h4>
+                  <p>Only fires conditionally when Layer 1 or 2 flags an anomaly. Clean files never hit this layer, conserving tokens and compute.</p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Innovation 4 -->
+          <article class="inno-card">
+            <div class="inno-meta"><span>INNOVATION 04</span><span>OBSERVABILITY</span></div>
+            <div class="inno-body">
+              <h3>4. 📋 Live Manifest Engine</h3>
+              <p>Every file touched during an AI session is tracked live through a 6-state finite state machine over WebSocket/SSE:</p>
+              <div class="state-pills">
+                <span class="st-pill changed"><code>CHANGED</code> Modified</span>
+                <span class="st-pill added"><code>ADDED</code> Created</span>
+                <span class="st-pill pending"><code>PENDING</code> Streaming</span>
+                <span class="st-pill skipped"><code>SKIPPED</code> Untouched</span>
+                <span class="st-pill flagged"><code>FLAGGED</code> Issue Detected</span>
+                <span class="st-pill locked"><code>LOCKED</code> Access Denied</span>
+              </div>
+              <p>Backed by an append-only session store JSON, developers maintain 100% visibility over filesystem alterations at every tick.</p>
+            </div>
+          </article>
+
+          <!-- Innovation 5 -->
+          <article class="inno-card">
+            <div class="inno-meta"><span>INNOVATION 05</span><span>CONVENTIONS</span></div>
+            <div class="inno-body">
+              <h3>5. 🎓 Professional Standards Engine (PSE)</h3>
+              <p>Enforces enterprise-grade engineering conventions using a dual-layer knowledge architecture:</p>
+              <ul>
+                <li><strong>Layer 1 — Vector RAG:</strong> Curated ruleset across Git branching, test isolation, file taxonomy, and safety protocols stored in ChromaDB/Pinecone. Top-5 relevant rules injected dynamically per task.</li>
+                <li><strong>Layer 2 — Fine-Tuned Model:</strong> LoRA fine-tune on Llama 3.1 8B / Mistral 7B trained on real-world PR reviews and code smells, benchmarked with RAGAS metrics (precision, recall, latency).</li>
+              </ul>
+              <p><strong>Human-First Disambiguation:</strong> When a flagged item might be intentional, Scoupe asks the developer first (zero AI cost). Only if the developer is unsure does it escalate to semantic inference.</p>
+            </div>
+          </article>
+
+          <!-- Innovation 6 -->
+          <article class="inno-card">
+            <div class="inno-meta"><span>INNOVATION 06</span><span>ECOSYSTEM</span></div>
+            <div class="inno-body">
+              <h3>6. 📦 Scoupe Kit — Curated Vibe Coder Bundle</h3>
+              <p>A turnkey one-command initialization suite that outfits any AI coding workspace:</p>
+              <div class="terminal-box">
+                <code>npx scoupe-kit init</code>
+              </div>
+              <p>Configures and deploys <strong>Graphiti MCP</strong> (temporal knowledge graph replacing 15-file scans with single 200-token queries), <strong>codebase-memory-mcp</strong> (AST symbol index up to 120x compression), plus filesystem, git, and puppeteer MCPs.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Section 4: Architecture Overview -->
+      <section id="architecture" class="cs-section">
+        <div class="section-head">
+          <span class="index">[04]</span>
+          <h2>SYSTEM ARCHITECTURE</h2>
+          <span class="mono">EXECUTION FLOW</span>
+        </div>
+        <div class="arch-container">
+          <div class="arch-flow">
+            <div class="arch-node">
+              <span class="node-tag">INPUT</span>
+              <h4>DEVELOPER PROMPT</h4>
+              <p>Natural language instruction</p>
+            </div>
+            <div class="arch-arrow">↓</div>
+            <div class="arch-node active">
+              <span class="node-tag">PHASE 1</span>
+              <h4>INTERVIEWER &amp; SCOPE CONTRACT</h4>
+              <p>5-question scope extraction → typed JSON contract</p>
+            </div>
+            <div class="arch-arrow">↓</div>
+            <div class="arch-split">
+              <div class="arch-node">
+                <span class="node-tag">STATE</span>
+                <h4>HOT TASK QUEUE</h4>
+                <p>Context isolation &amp; snapshots</p>
+              </div>
+              <div class="arch-node">
+                <span class="node-tag">PERSISTENCE</span>
+                <h4>SESSION STORE</h4>
+                <p>Summary rollups &amp; logs</p>
+              </div>
+            </div>
+            <div class="arch-arrow">↓</div>
+            <div class="arch-node highlight">
+              <span class="node-tag">EXECUTION</span>
+              <h4>AI PROXY &amp; MULTI-LAYER SCANNER</h4>
+              <p>Graphiti MCP queries + Regex → Tree-sitter AST → Semantic AI</p>
+            </div>
+            <div class="arch-arrow">↓</div>
+            <div class="arch-split">
+              <div class="arch-node">
+                <span class="node-tag">TELEMETRY</span>
+                <h4>LIVE MANIFEST ENGINE</h4>
+                <p>6-state WebSocket/SSE broadcast</p>
+              </div>
+              <div class="arch-node">
+                <span class="node-tag">SAFETY</span>
+                <h4>REPORT &amp; ATOMIC ROLLBACK</h4>
+                <p>Zero broken partial states on stop</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 5: Token Economics -->
+      <section id="economics" class="cs-section">
+        <div class="section-head">
+          <span class="index">[05]</span>
+          <h2>TOKEN ECONOMICS &amp; COST MATH</h2>
+          <span class="mono">RESOURCE EFFICIENCY</span>
+        </div>
+        <div class="cs-content-block">
+          <p>Scoupe is designed from first principles to prevent runaway context costs while adding negligible overhead on simple tasks:</p>
+          
+          <div class="table-wrap">
+            <table class="cs-table">
+              <thead>
+                <tr>
+                  <th>DEVELOPMENT SCENARIO</th>
+                  <th>WITHOUT SCOUPE</th>
+                  <th>WITH SCOUPE GUARDRAILS</th>
+                  <th>IMPACT</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Context Discovery</strong><br><small>Reading codebase to find symbols</small></td>
+                  <td>8,000 – 15,000 tokens<br><small>Reads multiple complete source files</small></td>
+                  <td><strong>200 – 400 tokens</strong><br><small>Graphiti MCP knowledge graph query</small></td>
+                  <td><span class="badge-pass">Up to 70x Reduction</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Clean Task Execution</strong><br><small>Direct, error-free implementation</small></td>
+                  <td>Baseline token expenditure</td>
+                  <td>Baseline + 700 tokens<br><small>Contract injection overhead</small></td>
+                  <td><span class="badge-neutral">Controlled (+~5%)</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Spiraling Task Failure</strong><br><small>Hallucination loops &amp; repeated fixes</small></td>
+                  <td>25,000 – 60,000+ tokens<br><small>Cumulative debug attempts</small></td>
+                  <td><strong>Intercepted at Layer 1/2</strong><br><small>Rolls back cleanly before recursion</small></td>
+                  <td><span class="badge-pass">Saves 20k–50k Tokens</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Multi-Task 5-Step Session</strong><br><small>Successive chained prompts</small></td>
+                  <td>Unbounded token inflation<br><small>Carries forward all raw histories</small></td>
+                  <td><strong>Strictly bounded</strong><br><small>Compressed summaries between tasks</small></td>
+                  <td><span class="badge-pass">Deterministic Context</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 6: Industry Validation -->
+      <section id="validation" class="cs-section">
+        <div class="section-head">
+          <span class="index">[06]</span>
+          <h2>INDUSTRY VALIDATION &amp; BENCHMARKS</h2>
+          <span class="mono">KARPATHY VIBE CODING</span>
+        </div>
+        <div class="cs-body-grid">
+          <div class="cs-col-main">
+            <p>
+              The fundamental vulnerabilities Scoupe addresses were highlighted by <strong>Andrej Karpathy</strong> when coining "vibe coding" in early 2025 and releasing <code>CLAUDE.md</code> rulesets to keep AI models disciplined.
+            </p>
+            <p>
+              While Karpathy documented the urgent industry need, text-based rulesets remain fragile because LLMs can overlook or deprioritize them under heavy context loads:
+            </p>
+            <div class="vs-grid">
+              <div class="vs-card">
+                <span class="vs-tag">PASSIVE APPROACH (CLAUDE.MD)</span>
+                <h4>Hope-Based Documentation</h4>
+                <ul>
+                  <li>Relies on model attention mechanisms</li>
+                  <li>Zero rollback mechanism on interrupt</li>
+                  <li>No filesystem access gates</li>
+                  <li>No deterministic audit log</li>
+                </ul>
+              </div>
+              <div class="vs-card active">
+                <span class="vs-tag">SCOUPE APPROACH</span>
+                <h4>Active Execution Layer</h4>
+                <ul>
+                  <li>Contract enforced in proxy pipeline</li>
+                  <li>Atomic instant rollback via snapshots</li>
+                  <li>Output-level path authorization</li>
+                  <li>6-state live WebSocket manifest</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="cs-col-aside">
+            <div class="highlight-card">
+              <span class="card-label">THE TAKEAWAY</span>
+              <h4>ENGINEERING OVER PROMPTING</h4>
+              <p>“Karpathy documented the systemic problem. Scoupe delivers the production-ready engineering infrastructure to solve it.”</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 7: Tech Stack & Status -->
+      <section id="stack" class="cs-section">
+        <div class="section-head">
+          <span class="index">[07]</span>
+          <h2>TECH STACK &amp; STATUS</h2>
+          <span class="mono">PLANNED IMPLEMENTATION</span>
+        </div>
+        <div class="tech-stack-grid">
+          <div class="stack-box">
+            <span class="stack-cat">CORE ENGINE</span>
+            <strong>Node.js · TypeScript</strong>
+            <p>High-performance proxy runtime and WebSocket streaming</p>
+          </div>
+          <div class="stack-box">
+            <span class="stack-cat">PARSING &amp; AST</span>
+            <strong>Tree-sitter</strong>
+            <p>Syntax tree validation across 150+ programming languages</p>
+          </div>
+          <div class="stack-box">
+            <span class="stack-cat">GRAPH MEMORY</span>
+            <strong>Graphiti MCP + FalkorDB</strong>
+            <p>Temporal knowledge graphs for ultra-compressed context</p>
+          </div>
+          <div class="stack-box">
+            <span class="stack-cat">VECTOR &amp; RAG</span>
+            <strong>ChromaDB → Pinecone</strong>
+            <p>Embeddings via <code>text-embedding-3-small</code></p>
+          </div>
+          <div class="stack-box">
+            <span class="stack-cat">FINE-TUNING</span>
+            <strong>LoRA on Llama 3.1 8B</strong>
+            <p>Trained on code smell detection &amp; convention enforcement</p>
+          </div>
+          <div class="stack-box">
+            <span class="stack-cat">EVALUATION</span>
+            <strong>RAGAS · MLflow · W&amp;B</strong>
+            <p>Rigorous tracking of precision, recall, and cost per check</p>
+          </div>
+        </div>
+
+        <div class="status-summary-card">
+          <div class="status-header">
+            <h3>CURRENT ROADMAP</h3>
+            <span class="status-badge">ARCHITECTURE COMPLETED</span>
+          </div>
+          <div class="roadmap-grid">
+            <div class="road-col done">
+              <span class="road-phase">PHASE 1 · COMPLETE</span>
+              <h4>Architecture &amp; Design</h4>
+              <ul>
+                <li>✓ Full system architecture stress-tested</li>
+                <li>✓ Edge-case resolution (rollback, conflict detection)</li>
+                <li>✓ Token economics &amp; mathematical models verified</li>
+                <li>✓ MCP ecosystem toolchain defined</li>
+              </ul>
+            </div>
+            <div class="road-col active">
+              <span class="road-phase">PHASE 2 · IN PROGRESS</span>
+              <h4>Core Engine &amp; MVP</h4>
+              <ul>
+                <li>→ Node.js Scope Lock engine &amp; JSON schema</li>
+                <li>→ Snapshot &amp; atomic auto-rollback daemon</li>
+                <li>→ Real-time Layer 1 regex scanner</li>
+                <li>→ Filesystem &amp; Git MCP integrations</li>
+              </ul>
+            </div>
+            <div class="road-col planned">
+              <span class="road-phase">PHASE 3 · PLANNED</span>
+              <h4>PSE &amp; Kit Distribution</h4>
+              <ul>
+                <li>○ LoRA fine-tuning &amp; RAGAS evaluation</li>
+                <li>○ <code>npx scoupe-kit</code> package release</li>
+                <li>○ IDE extensions for Cursor &amp; VS Code</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Back / CTA footer -->
+      <section class="cs-footer-cta">
+        <div class="cta-inner">
+          <p class="mono">INTERESTED IN COLLABORATING ON AI GUARDRAILS?</p>
+          <h2>LET’S BUILD<br>SOMETHING <em>ROBUST.</em></h2>
+          <div class="cta-buttons">
+            <a class="primary-btn" href="mailto:hello@sakshambisht.dev">CONTACT SAKSHAM <b>↗</b></a>
+            <a class="secondary-btn" href="index.html#work">EXPLORE OTHER WORK <b>↓</b></a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>© 2026 SAKSHAM BISHT</span>
+      <span>SCOUPE CASE STUDY · SYSTEMS &amp; AI AGENT ARCHITECTURE</span>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -35,18 +35,59 @@
       </section>
 
       <section id="work" class="work-section">
-        <div class="section-head"><span class="index">[01]</span><h2>SELECTED WORK</h2><span class="mono">04 PROJECTS / OPEN SOURCE</span></div>
+        <div class="section-head"><span class="index">[01]</span><h2>SELECTED WORK</h2><span class="mono">05 PROJECTS &amp; CASE STUDIES</span></div>
+
+        <article class="project project-primary project-scoupe">
+          <div class="project-meta"><span>[ FEATURED CASE STUDY / 01 ]</span><span>AI AGENTS &amp; SYSTEMS ARCHITECTURE · IN DEVELOPMENT</span></div>
+          <div class="project-visual scoupe-visual">
+            <div class="scoupe-console">
+              <div class="scoupe-console-bar">
+                <b></b><b></b><b></b>
+                <span>scoupe-runtime · LIVE EXECUTION LAYER</span>
+                <i class="scoupe-status-tag">GUARDRAIL ACTIVE</i>
+              </div>
+              <div class="scoupe-console-body">
+                <div class="scoupe-line"><span class="c-dim">[00:01]</span> <span class="c-accent">INTERVIEWER</span> 5-question contract generated &rarr; <code>scope.contract.json</code></div>
+                <div class="scoupe-line"><span class="c-dim">[00:02]</span> <span class="c-green">SCOPE LOCK</span> Whitelisted: <code>src/auth/*</code> | Negative boundaries locked</div>
+                <div class="scoupe-line"><span class="c-dim">[00:03]</span> <span class="c-yellow">SNAPSHOT</span> Pre-task rollback snapshot cached for #task-01</div>
+                <div class="scoupe-line"><span class="c-dim">[00:04]</span> <span class="c-red">INTERCEPT</span> AI attempted write to <code>config/database.ts</code> &rarr; <strong class="badge-lock">BLOCKED [LOCKED]</strong></div>
+                <div class="scoupe-line"><span class="c-dim">[00:05]</span> <span class="c-cyan">SCANNER</span> Regex stream OK &rarr; Tree-sitter AST parser verified clean</div>
+              </div>
+              <div class="scoupe-badge-card">
+                <span>GRAPHITI MCP</span>
+                <p>240 TOKENS QUERY<br><em>VS 8,500 TOKENS RAW</em></p>
+                <i>✓ 70X COMPRESSION</i>
+              </div>
+            </div>
+          </div>
+          <div class="project-body">
+            <div>
+              <h3>Scoupe — AI-Native Guardrails</h3>
+              <p>A live execution layer wrapping AI coding assistants to stop scope creep, broken rollbacks, and silent corruption before they reach the codebase. Engineered with a 3-layer scanner (Regex &rarr; Tree-sitter AST &rarr; Semantic AI), hot task queue with instant zero-state rollback, and Graphiti MCP knowledge graphs.</p>
+              <p class="project-strength">Architected from the ground up to solve the failure modes Andrej Karpathy identified in vibe coding.</p>
+            </div>
+            <div class="tag-list">
+              <span>TYPESCRIPT</span>
+              <span>TREE-SITTER</span>
+              <span>GRAPHITI MCP</span>
+              <span>RAG &amp; LORA</span>
+              <span>SYSTEMS DESIGN</span>
+            </div>
+            <a class="project-link" href="scoupe.html">READ CASE STUDY <b>↗</b></a>
+          </div>
+        </article>
+
         <article class="project project-primary">
-          <div class="project-meta"><span>[ FEATURED / 01 ]</span><span>JAVASCRIPT · CHROME EXTENSION</span></div>
+          <div class="project-meta"><span>[ 02 ]</span><span>JAVASCRIPT · CHROME EXTENSION</span></div>
           <div class="project-visual leet-visual"><div class="browser"><div class="browser-bar"><b></b><b></b><b></b><span>leetcode.com/problems/…</span></div><div class="problem"><small>PROBLEM SOLVED</small><h3>Two Sum</h3><p>Capture your solution, context, and patterns.</p><button>SAVE TO NOTION <b>→</b></button></div><div class="notion-card"><span>N</span><p>LEETCODE<br>KNOWLEDGE BASE</p><i>✓ SYNCED</i></div></div></div>
           <div class="project-body"><div><h3>LeetCode Knowledge Bot</h3><p>A focused Chrome extension that turns solved LeetCode problems into a structured Notion knowledge base in one click. It makes interview preparation more deliberate by preserving solutions, patterns, and context for quick revision.</p><p class="project-strength">Designed to replace scattered notes with a repeatable learning workflow.</p></div><div class="tag-list"><span>CHROME EXTENSION</span><span>NOTION API</span><span>JAVASCRIPT</span></div><a class="project-link" href="https://github.com/saksham191-M1/leetcode_-bot" target="_blank" rel="noreferrer">VIEW REPOSITORY <b>↗</b></a></div>
         </article>
 
         <div class="project-pair">
-          <article class="project"><div class="project-meta"><span>[ 02 ]</span><span>WEB PLATFORM</span></div><div class="project-visual community-visual"><div class="orbit orbit-a"></div><div class="orbit orbit-b"></div><div class="community-core">COMMUNITY<br><strong>+42%</strong><small>GROWTH SIGNAL</small></div><span class="satellite s1">MEMBERS</span><span class="satellite s2">EVENTS</span><span class="satellite s3">REACH</span></div><div class="project-body"><div><h3>Community Growth Platform</h3><p>A commercial full-stack platform built to bring community content, member engagement, and interactive experiences into one digital home. The product thinking centres on helping organisers create a stronger, more connected audience journey.</p><p class="project-strength">Combines polished public-facing experiences with practical content and data workflows.</p></div><div class="tag-list"><span>NEXT.JS</span><span>TYPESCRIPT</span><span>DATABASE</span></div><a class="project-link" href="https://github.com/saksham191-M1/ramlilawebsite" target="_blank" rel="noreferrer">VIEW REPOSITORY <b>↗</b></a></div></article>
-          <article class="project"><div class="project-meta"><span>[ 03 ]</span><span>LANGUAGE TOOL</span></div><div class="project-visual voice-visual"><div class="wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="voice-label">HELLO <span>→</span> नमस्ते</div><div class="voice-foot">LIVE SPEECH / TRANSLATION</div></div><div class="project-body"><div><h3>Transvoix</h3><p>A real-time multilingual communication tool combining a web experience and browser extension. Its ML approach is trained on real language data to support more natural translation across different languages, while keeping latency in focus for fluid conversations.</p><p class="project-strength">Built around practical, low-friction communication—not just translation output.</p></div><div class="tag-list"><span>MACHINE LEARNING</span><span>BROWSER EXTENSION</span><span>JAVASCRIPT</span><span>PYTHON</span></div><a class="project-link" href="https://github.com/saksham191-M1/Transvoix" target="_blank" rel="noreferrer">VIEW REPOSITORY <b>↗</b></a></div></article>
+          <article class="project"><div class="project-meta"><span>[ 03 ]</span><span>WEB PLATFORM</span></div><div class="project-visual community-visual"><div class="orbit orbit-a"></div><div class="orbit orbit-b"></div><div class="community-core">COMMUNITY<br><strong>+42%</strong><small>GROWTH SIGNAL</small></div><span class="satellite s1">MEMBERS</span><span class="satellite s2">EVENTS</span><span class="satellite s3">REACH</span></div><div class="project-body"><div><h3>Community Growth Platform</h3><p>A commercial full-stack platform built to bring community content, member engagement, and interactive experiences into one digital home. The product thinking centres on helping organisers create a stronger, more connected audience journey.</p><p class="project-strength">Combines polished public-facing experiences with practical content and data workflows.</p></div><div class="tag-list"><span>NEXT.JS</span><span>TYPESCRIPT</span><span>DATABASE</span></div><a class="project-link" href="https://github.com/saksham191-M1/ramlilawebsite" target="_blank" rel="noreferrer">VIEW REPOSITORY <b>↗</b></a></div></article>
+          <article class="project"><div class="project-meta"><span>[ 04 ]</span><span>LANGUAGE TOOL</span></div><div class="project-visual voice-visual"><div class="wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="voice-label">HELLO <span>→</span> नमस्ते</div><div class="voice-foot">LIVE SPEECH / TRANSLATION</div></div><div class="project-body"><div><h3>Transvoix</h3><p>A real-time multilingual communication tool combining a web experience and browser extension. Its ML approach is trained on real language data to support more natural translation across different languages, while keeping latency in focus for fluid conversations.</p><p class="project-strength">Built around practical, low-friction communication—not just translation output.</p></div><div class="tag-list"><span>MACHINE LEARNING</span><span>BROWSER EXTENSION</span><span>JAVASCRIPT</span><span>PYTHON</span></div><a class="project-link" href="https://github.com/saksham191-M1/Transvoix" target="_blank" rel="noreferrer">VIEW REPOSITORY <b>↗</b></a></div></article>
         </div>
-        <article class="project project-wide"><div class="project-meta"><span>[ 04 ]</span><span>EDTECH / FULL STACK</span></div><div class="wide-layout"><div><h3>Learning Operations Platform</h3><p>A full-stack learning platform designed around the complete student journey: secure onboarding, task management, progress visibility, certificates, payments, and administration.</p><p class="project-strength">A strong systems project that connects several real operational workflows in one cohesive product.</p><div class="tag-list"><span>PYTHON</span><span>JAVASCRIPT</span><span>FULL STACK</span></div></div><div class="skill-ui"><div class="ui-title">STUDENT DASHBOARD <b>92%</b></div><div class="ui-line active"></div><div class="ui-line"></div><div class="ui-line short"></div><div class="ui-card">WEEKLY TASKS <span>04</span></div></div></div></article>
+        <article class="project project-wide"><div class="project-meta"><span>[ 05 ]</span><span>EDTECH / FULL STACK</span></div><div class="wide-layout"><div><h3>Learning Operations Platform</h3><p>A full-stack learning platform designed around the complete student journey: secure onboarding, task management, progress visibility, certificates, payments, and administration.</p><p class="project-strength">A strong systems project that connects several real operational workflows in one cohesive product.</p><div class="tag-list"><span>PYTHON</span><span>JAVASCRIPT</span><span>FULL STACK</span></div></div><div class="skill-ui"><div class="ui-title">STUDENT DASHBOARD <b>92%</b></div><div class="ui-line active"></div><div class="ui-line"></div><div class="ui-line short"></div><div class="ui-card">WEEKLY TASKS <span>04</span></div></div></div></article>
       </section>
 
       <section id="coding" class="coding-section">
